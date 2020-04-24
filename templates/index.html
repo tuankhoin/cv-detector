@@ -1,0 +1,85 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock title %}
+
+{% block navbar %}
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item active">
+    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="fakenewsdetect">FakeNews Detection</a>
+  </li>
+
+</ul>
+{% endblock navbar %}
+
+{% block content %}
+<div class="starter-template">
+  <h1>Welcome!</h1>
+  <p class="lead">This is my personal webpage implementation<br>
+    Currenly testing my implementations here!</p>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <a href="https://sites.google.com/tnv.edu.vn/khoinguyen/landscape?authuser=0">
+              <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=1-pPJP-T0hFat2Nl_6xrGWxGJiVvd9XJo" alt="Landscape">
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Landscape</h2>
+            <p>Adventures, explorations, road trips,...</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href="https://sites.google.com/tnv.edu.vn/khoinguyen/portrait?authuser=0">
+              <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=17lknnxXsSH8oFAqEm62Ba1OligKbXSpx" alt="Potrait">
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Portrait</h2>
+            <p>Commercial products, concepts,...</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href="https://sites.google.com/tnv.edu.vn/khoinguyen/event-shooting?authuser=0">
+              <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=1aBRbP6s16BnZ2ArohU9AWspKjma0jt-r" alt="Event">
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Events</h2>
+            <p>Parties, shows, performances,...</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href="https://sites.google.com/tnv.edu.vn/khoinguyen/phone-camera?authuser=0">
+              <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=16kaOgrRXm7wnYMXovTttMFTmYaTTd6ph" alt="PhoneCam">
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Phone Camera</h2>
+            <p>Not only DSLRs make good ones.</p>
+          </div>
+        </div>
+
+
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+
+</div>
+{% endblock content %}
