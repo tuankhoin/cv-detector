@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}HeatMap{% endblock title %}
+
+{% block navbar %}
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="detect">CvDetector</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="heatmap">HeatMap (On Progress) <span class="sr-only">(current)</span></a>
+  </li>
+</ul>
+{% endblock navbar %}
+
+{% block content %}
+<div class="starter-template">
+  <h1>HeatMap Tracker!</h1>
+  <p class="lead"> Detecting hotspots, safety and more to arrive!<br></p>
+  <iframe width="840" height="420"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+  </iframe>
+</div>
+{% endblock content %}

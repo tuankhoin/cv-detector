@@ -9,9 +9,9 @@ video_stream = VideoCamera()
 def index():
     return render_template('index.html')
 
-@app.route('/fakenewsdetect')
-def fakenewsdetect():
-    return render_template('fakenewsdetect.html')
+@app.route('/detect')
+def detect():
+    return render_template('detect.html')
 
 def gen(camera):
     while True:
@@ -23,6 +23,10 @@ def gen(camera):
 def video_feed():
     return Response(gen(video_stream),
         mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/heatmap')
+def heatmap():
+    return render_template('heatmap.html')
 
 if __name__=='__main__':
     app.run(debug=True)

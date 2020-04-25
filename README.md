@@ -32,3 +32,18 @@ This is to ensure that your package download will only used for this repo. If st
 * Set execution to unrestricted: `Set-ExecutionPolicy Unrestricted`
 
 * Run automated script: `.\environment.ps1`
+
+### Using `pipenv`
+
+* Install: `pip3 install pipenv`
+
+* Installing dependencies: `pipenv install`
+
+* Run: `python app.py`
+
+## Author: Couch Potatoes
+
+* Tuan Khoi Nguyen
+* Hoang Anh Ngo
+* Thai Nam Hoang
+* Le Ngoc Ha Vu

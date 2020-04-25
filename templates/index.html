@@ -3,83 +3,45 @@
 
 {% block title %}Home Page{% endblock title %}
 
+{% block bglink %}
+  <style>
+    body {
+      background-image: url('https://drive.google.com/uc?export=view&id=1ituXevDS4n-LdYARp1vpfg8fMbxetfma');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+{% endblock %}
+
 {% block navbar %}
 <ul class="navbar-nav mr-auto">
   <li class="nav-item active">
     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="fakenewsdetect">CvDetector</a>
+    <a class="nav-link" href="detect">CvDetector</a>
   </li>
-
+  <li class="nav-item">
+    <a class="nav-link" href="heatmap">HeatMap (On Progress)</a>
+  </li>
 </ul>
 {% endblock navbar %}
 
 {% block content %}
-<div class="starter-template">
-  <h1>Welcome!</h1>
-  <p class="lead">A testing carousel.<br>
-    Currenly testing my implementations here!</p>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-      </ol>
+<div class="starter-template" style="color:white;">
+  <h1>Covy Detector</h1>
+  <h3><em>by Couch Potatoes</em></h3>
+  <p class="lead">A camera that measures and detects signs of safety violation in this time of COVID-19.<br></p>
+  <h3 style="padding-top:5rem;">Current features:</h3>
+  <h5>
+    -Masks detection <br>
+    -Distance measurement <br>
+  </h5>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <a href="https://sites.google.com/tnv.edu.vn/khoinguyen/landscape?authuser=0">
-              <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=1-pPJP-T0hFat2Nl_6xrGWxGJiVvd9XJo" alt="Landscape">
-          </a>
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Landscape</h2>
-            <p>Adventures, explorations, road trips,...</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <a href="https://sites.google.com/tnv.edu.vn/khoinguyen/portrait?authuser=0">
-              <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=17lknnxXsSH8oFAqEm62Ba1OligKbXSpx" alt="Potrait">
-          </a>
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Portrait</h2>
-            <p>Commercial products, concepts,...</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <a href="https://sites.google.com/tnv.edu.vn/khoinguyen/event-shooting?authuser=0">
-              <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=1aBRbP6s16BnZ2ArohU9AWspKjma0jt-r" alt="Event">
-          </a>
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Events</h2>
-            <p>Parties, shows, performances,...</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <a href="https://sites.google.com/tnv.edu.vn/khoinguyen/phone-camera?authuser=0">
-              <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=16kaOgrRXm7wnYMXovTttMFTmYaTTd6ph" alt="PhoneCam">
-          </a>
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Phone Camera</h2>
-            <p>Not only DSLRs make good ones.</p>
-          </div>
-        </div>
-
-
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-
-    </div>
+  <div style="padding-top:5rem;">
+    <button type="button" class="btn btn-secondary" href="detect">Click on CvDetector to try!</button>
+  </div>
 
 </div>
 {% endblock content %}
