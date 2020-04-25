@@ -12,7 +12,7 @@ To begin, clone this repo and `cd` to it.
 
 * Creating a new environment inside folder: `virtualenv env`
 
-* Activate virtual environment: 
+* Activate virtual environment:
   * **Linux, MacOS**: `source env/bin/activate`
 
   * **Windows**: `"env\Scripts\activate.bat"`
@@ -23,7 +23,7 @@ This is to ensure that your package download will only used for this repo. If st
 
 * Run: `python app.py`
 
-### Using PowerShell
+### Using PowerShell Automated Script
 
 * Install/Open PowerShell
 
