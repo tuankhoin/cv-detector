@@ -1,0 +1,7 @@
+Dear ${PERSON_NAME}, 
+
+Our system detected at 3:00pm, you did not weat face mask.
+Please wear face mask or else you will be fined 200.000VNĐ.
+
+Yours faithfully,
+Couch Potatoes
