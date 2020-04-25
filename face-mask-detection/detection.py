@@ -1,11 +1,11 @@
-import cv2 
+import cv2
 import keras
 import numpy as np
 
-mask_model = keras.models.load_model('/face_mask_data.h5')
+mask_model = keras.models.load_model('face_mask_data.h5')
 video = cv2.VideoCapture(0)
 
-face_cascade = cv2.CascadeClassifier('/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 while(True):
     ret, frame = video.read()
@@ -28,6 +28,6 @@ while(True):
             display_string = 'Without Mask'
 
         cv2.putText(frame, display_string, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (36, 255, 12), 1)
-   
+
 video.release()
 cv2.destroyAllWindows()
