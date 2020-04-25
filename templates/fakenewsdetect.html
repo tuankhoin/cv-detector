@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 
-{% block title %}Fake News Detect{% endblock title %}
+{% block title %}CvDetector{% endblock title %}
 
 {% block navbar %}
 <ul class="navbar-nav mr-auto">
@@ -9,7 +9,7 @@
     <a class="nav-link" href="/">Home</a>
   </li>
   <li class="nav-item active">
-    <a class="nav-link" href="fakenewsdetect">FakeNews Detection <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="fakenewsdetect">CvDetector <span class="sr-only">(current)</span></a>
   </li>
 </ul>
 {% endblock navbar %}
@@ -17,7 +17,7 @@
 {% block content %}
 <div class="starter-template">
   <h1>Welcome!</h1>
-  <p class="lead"> Currenly testing my fake news detecting implementation here!<br></p>
+  <p class="lead"> Currenly testing my detector implementation here!<br></p>
   <img src="{{ url_for('video_feed') }}" />
 </div>
 {% endblock content %}
