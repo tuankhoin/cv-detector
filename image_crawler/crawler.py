@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
+"""
+Created on Fri Apr 25 2020
 
-# In[1]:
+@author: ngohoanganh
+"""
 
-
+# import necessary libraries
 import requests
 import selenium
 import os
@@ -15,34 +18,19 @@ from bs4 import BeautifulSoup
 import hashlib
 
 
-# In[2]:
-
-
 # setting directory for chromedriver
+"""
+The author uses Chrome version 81. For the suitable chromedriver, please check
+the Chrome version currently used, then download the compatible Chromedriver
+"""
 DRIVER_PATH = "./chromedriver"
 wd = webdriver.Chrome(executable_path=DRIVER_PATH)
 
-
-# In[3]:
-
-
+# test opening, closing and filling in search box
 wd.get('https://google.com')
-
-
-# In[4]:
-
-
 search_box = wd.find_element_by_css_selector('input.gLFyf')
 search_box.send_keys('masks on face')
-
-
-# In[5]:
-
-
 wd.quit()
-
-
-# In[6]:
 
 
 # fetch images by scrolling through results
@@ -101,10 +89,6 @@ def fetch_image_urls(query:str, max_links_to_fetch:int, wd:webdriver, sleep_betw
 
     return image_urls
 
-
-# In[7]:
-
-
 # function for downloading the image and raise errors whenever necessary 
 def persist_image(folder_path:str,url:str):
     try:
@@ -124,10 +108,7 @@ def persist_image(folder_path:str,url:str):
         print(f"ERROR - Could not save {url} - {e}")
 
 
-# In[8]:
-
-
-# combining the previous two functions 
+# combining the previous two functions
 # google search and download 
 
 def search_and_download(search_term:str,driver_path:str,target_path:str,number_images):
@@ -143,7 +124,7 @@ def search_and_download(search_term:str,driver_path:str,target_path:str,number_i
         persist_image(target_folder,elem)
 
 
-# In[11]:
+# set necessary parameters for downloading
 
 
 SEARCH_TERM_MASK = 'masks on face'
@@ -152,26 +133,20 @@ SEARCH_TERM_MASKOFF_1 = 'portrait'
 TARGET_PATH = './images'
 
 
-# In[12]:
-
-
-# demo for 10 mask images
+# demo for 200 mask images
 search_and_download(
     search_term = SEARCH_TERM_MASK,
     driver_path = DRIVER_PATH,
     target_path = TARGET_PATH,
-    number_images = 10
+    number_images = 200
 )
 
 
-# In[13]:
-
-
-# demo for 10 images without mask
+# demo for 200 portrait images (images without mask)
 search_and_download(
     search_term = SEARCH_TERM_MASKOFF_1,
     driver_path = DRIVER_PATH,
     target_path = TARGET_PATH,
-    number_images = 10
+    number_images = 200
 )
 
