@@ -23,7 +23,7 @@ This is to ensure that your package download will only used for this repo. If st
 
 * Run: `python app.py`
 
-### Using PowerShell Automated Script
+### Using PowerShell Automated Script (Windows)
 
 * Install/Open PowerShell
 
@@ -32,6 +32,12 @@ This is to ensure that your package download will only used for this repo. If st
 * Set execution to unrestricted: `Set-ExecutionPolicy Unrestricted`
 
 * Run automated script: `.\environment.ps1`
+
+### Using bash script (Mac/Linux)
+
+* Activate permission: `chmod +x environment.sh`
+
+* Run `./environment.sh`
 
 ### Using `pipenv`
 

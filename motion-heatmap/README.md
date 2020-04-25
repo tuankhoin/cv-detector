@@ -17,7 +17,7 @@ necessary safety measurements.
 ### Manual CLI
 
 * Add dependencies: `pip3 install -r requirements.txt`
-* Run the script: `python heatmap.py -v %VideoPath$%`
+* Run the script: `python heatmap.py -v %VideoPath%`
 
 ### Automated Script
 
