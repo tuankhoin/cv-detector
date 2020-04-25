@@ -22,3 +22,13 @@ This is to ensure that your package download will only used for this repo. If st
 * Install all necessary dependencies: `pip3 install -r requirements.txt`
 
 * Run: `python app.py`
+
+### Using PowerShell
+
+* Install/Open PowerShell
+
+* Change directory: `Set-Location -Path "your\path\here"`
+
+* Set execution to unrestricted: `Set-ExecutionPolicy Unrestricted`
+
+* Run automated script: `.\environment.ps1`
