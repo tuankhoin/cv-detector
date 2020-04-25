@@ -1,4 +1,4 @@
-import cv2 
+import cv2
 import keras
 import numpy as np
 
