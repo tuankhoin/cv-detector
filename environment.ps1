@@ -1,23 +1,16 @@
+ECHO ====CREATING_NEW_ENV====
 pip3 install virtualenv
-
-====CREATING NEW ENV====
 virtualenv env
 
-====ACTIVATE LOCAL ENVIRONMENT===
-if ($IsWindows){
+ECHO ====ACTIVATE_LOCAL_ENVIRONMENT===
+if ($IsWindows -or $ENV:OS){
   "env\Scripts\activate.bat"
 } else {
   source env/bin/activate
 }
 
-ECHO ====INSTALLING DEPENDENCIES====
+ECHO ====INSTALLING_DEPENDENCIES====
 pip3 install -r requirements.txt
 
-ECHO ====NOW RUNNING IMPLEMENTATION====
+ECHO ====NOW_RUNNING_IMPLEMENTATION====
 python app.py
-
-if ($IsWindows){
-  explorer "localhost:5000"
-} else {
-  open "localhost:5000"
-}
