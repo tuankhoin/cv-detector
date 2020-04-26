@@ -47,6 +47,13 @@ This is to ensure that your package download will only used for this repo. If st
 
 * Run: `python app.py`
 
+
+### How to run `face-mask-detection` model
+
+* Change directory: `cd to dir`
+
+* Run the following command: `python3 keras_infer.py --img-mode 0 --video-path 0`
+
 ## Author: Couch Potatoes
 
 * Tuan Khoi Nguyen
