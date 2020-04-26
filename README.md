@@ -47,12 +47,34 @@ This is to ensure that your package download will only used for this repo. If st
 
 * Run: `python app.py`
 
+## How to run different models implemented
 
-### How to run `face-mask-detection` model
+### `face-mask-detection` model
 
 * Change directory: `cd to dir`
 
 * Run the following command: `python3 keras_infer.py --img-mode 0 --video-path 0`
+
+
+### Motion heatmap tracking
+
+* Change directory:  `cd to dir` 
+
+* Add all necessary dependencies: `pip install -r requirements.txt`
+
+* Run the script: `python heatmap.py -v %videopath%` 
+
+### Social distancing tracking
+
+* First, for the script to run successfully, `yolo3.weights` has to be downloaded and added to the `yolov3` directory. The file can be found [here](https://pjreddie.com/darknet/yolo/)
+
+* Change directory `cd to dir`
+
+* Add all necessary dependencies
+
+* Change the respective directories for images and videos in the `SD_Alert_Image.py` and `SD_Alert_Video.py` if new images and videos are tested.
+
+* Deploy the algorithm by either `python SD_Alert_Image.py`,  `python SD_Alert_Video.py` or `python SD_Alert_Camera.py`.
 
 ## Author: Couch Potatoes
 
