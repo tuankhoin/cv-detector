@@ -1,33 +1,58 @@
-import cv2 
-import keras
+from imutils.video import VideoStream
+from imutils import face_utils
 import numpy as np
+import imutils
+import time
+import dlib
+import os
+import cv2
 
-mask_model = keras.models.load_model('/face_mask_data.h5')
-video = cv2.VideoCapture(0)
+face_detect = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+landmark_detect = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
-face_cascade = cv2.CascadeClassifier('/haarcascade_frontalface_default.xml')
 
-while(True):
-    ret, frame = video.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+vs = VideoStream(src=0).start()
+time.sleep(1.0)
 
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.5, minNeighbors=5, minSize=(30, 30))
+while True:
 
-    print("Found {0} face(s)!".format(len(faces)))
+	
+	frame = vs.read()
+	frame = imutils.resize(frame, width=600)
+	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+	faces = face_detect.detectMultiScale(gray, scaleFactor=1.1,		minNeighbors=5, minSize=(100, 100),		flags=cv2.CASCADE_SCALE_IMAGE)
 
-    for (x, y, w, h) in faces:
-        frame = cv2.rectangle(frame, (x, y), (x + w, y + h), (36,255,12), 1)
-        current_image = np.array(frame)
+	for (x, y, w, h) in faces:
 
-        model_prediction = mask_model.predict(current_image.reshape(-1, 160, 160, 3)) == mask_model.predict(current_image.reshape(-1,160,160,3)).max()
-        result = np.sum(mask_model.predict(current_image.reshape(-1,160,160,3)), axis = 0)
+		rect = dlib.rectangle(int(x), int(y), int(x + w),
+			int(y + h))
 
-        if result[0] >= result[1]:
-            display_string = 'With Mask'
-        else:
-            display_string = 'Without Mask'
+		landmark = landmark_detect(gray, rect)
+		landmark = face_utils.shape_to_np(landmark)
 
-        cv2.putText(frame, display_string, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (36, 255, 12), 1)
-   
-video.release()
+		(mStart, mEnd) = face_utils.FACIAL_LANDMARKS_IDXS["mouth"]
+		mouth = landmark[mStart:mEnd]
+
+		boundRect = cv2.boundingRect(mouth)
+		cv2.rectangle(frame,
+					  (int(boundRect[0]), int(boundRect[1])),
+					  (int(boundRect[0] + boundRect[2]),  int(boundRect[1] + boundRect[3])), (0,0,255), 2)
+
+		hsv = cv2.cvtColor(frame[int(boundRect[1]):int(boundRect[1] + boundRect[3]),int(boundRect[0]):int(boundRect[0] + boundRect[2])], cv2.COLOR_RGB2HSV)
+		sum_saturation = np.sum(hsv[:, :, 1])
+		area = int(boundRect[2])*int(boundRect[3])
+		avg_saturation = sum_saturation / area
+
+		if avg_saturation>100:
+			cv2.putText(frame, "Please wear face mask!", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255),
+						2)
+
+	cv2.imshow("Camera", frame)
+
+	key = cv2.waitKey(1) & 0xFF
+	if key == 27:
+		break
+
+
 cv2.destroyAllWindows()
+vs.stop()
