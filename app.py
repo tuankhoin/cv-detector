@@ -28,5 +28,9 @@ def video_feed():
 def heatmap():
     return render_template('heatmap.html')
 
+@app.route('/mask')
+def mask():
+    return render_template('mask.html')
+    
 if __name__=='__main__':
     app.run(debug=True)

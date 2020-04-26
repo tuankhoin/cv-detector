@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 
-{% block title %}SocialDistancingDetector{% endblock title %}
+{% block title %}MaskDetector{% endblock title %}
 
 {% block bglink %}
   <style>
@@ -19,28 +19,27 @@
   <li class="nav-item">
     <a class="nav-link" href="/">Home</a>
   </li>
-  <li class="nav-item active">
+  <li class="nav-item">
     <a class="nav-link" href="detect">SocialDistancingDetector <span class="sr-only">(current)</span></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="heatmap">HeatMap</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="mask">MaskDetector</a>
+  <li class="nav-item active">
+    <a class="nav-link" href="mask">MaskDetector <span class="sr-only">(current)</span></a>
   </li>
 </ul>
 {% endblock navbar %}
 
 {% block content %}
 <div class="starter-template">
-  <h1>Social Distacning Detector!</h1>
-  <p class="lead"> See if you are keeping social distancing!<br></p>
+  <h1>Covy Mask Detector!</h1>
+  <p class="lead"> See if you are keeping your mask on!<br></p>
 
   <h2 style="padding-top:4rem;">Demo:</h2>
-  <iframe src="https://drive.google.com/file/d/16wPu2HdKpVNMxo9hvPmg24Dx6PgwZ8vQ/preview" style="object-fit:scale-down;"></iframe>
+  <iframe src="https://drive.google.com/file/d/1tGAIoPsNIpcdSRelsxRoNAyLIe5WUk2K/preview"></iframe>
 
   <h2 style="padding-top:4rem;">Try it now!</h2>
   <p><code>python 3</code> and <code>pip</code> required.</p>
-  <img src="{{ url_for('video_feed') }}" />
 </div>
 {% endblock content %}
