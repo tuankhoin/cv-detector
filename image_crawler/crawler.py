@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-"""
-Created on Fri Apr 25 2020
-
-@author: ngohoanganh
-"""
-
 # import necessary libraries
 import requests
 import selenium
