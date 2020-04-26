@@ -1,5 +1,5 @@
 # Covy Detector
-<a name="web"></a>Website:  https://7e3fd93c.ngrok.io
+<a name="web"></a>https://covydetector.herokuapp.com/
 ## Usage Instruction:
 
 Requirements: `python 3` and `pip`.
