@@ -3,6 +3,17 @@
 
 {% block title %}CvDetector{% endblock title %}
 
+{% block bglink %}
+  <style>
+    body {
+      background-image: url('https://drive.google.com/uc?export=view&id=151aIN73Xehm9TfDq1oPbJ7PKb5gr8c5v');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+{% endblock %}
+
 {% block navbar %}
 <ul class="navbar-nav mr-auto">
   <li class="nav-item">
@@ -12,7 +23,7 @@
     <a class="nav-link" href="detect">CvDetector <span class="sr-only">(current)</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="heatmap">HeatMap (On Progress)</a>
+    <a class="nav-link" href="heatmap">HeatMap</a>
   </li>
 </ul>
 {% endblock navbar %}
@@ -20,7 +31,12 @@
 {% block content %}
 <div class="starter-template">
   <h1>Covy Detector!</h1>
-  <p class="lead"> See if you are wearing a mask, or keeping social distancing here!<br></p>
+  <p class="lead"> See if you are wearing a mask, or keeping social distancing!<br></p>
+
+  <h2 style="padding-top:4rem;">Demo:</h2>
+  <iframe src="https://drive.google.com/file/d/16wPu2HdKpVNMxo9hvPmg24Dx6PgwZ8vQ/preview" style="object-fit:scale-down;"></iframe>
+
+  <h2 style="padding-top:4rem;">Try it now!</h2>
   <img src="{{ url_for('video_feed') }}" />
 </div>
 {% endblock content %}

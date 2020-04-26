@@ -2,6 +2,17 @@
 
 {% block title %}HeatMap{% endblock title %}
 
+{% block bglink %}
+  <style>
+    body {
+      background-image: url('https://drive.google.com/uc?export=view&id=1-pPJP-T0hFat2Nl_6xrGWxGJiVvd9XJo');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+{% endblock %}
+
 {% block navbar %}
 <ul class="navbar-nav mr-auto">
   <li class="nav-item">
@@ -11,17 +22,34 @@
     <a class="nav-link" href="detect">CvDetector</a>
   </li>
   <li class="nav-item active">
-    <a class="nav-link" href="heatmap">HeatMap (On Progress) <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="heatmap">HeatMap<span class="sr-only">(current)</span></a>
   </li>
 </ul>
 {% endblock navbar %}
 
 {% block content %}
-<div class="starter-template">
+<div class="starter-template" style="color:white;">
   <h1>HeatMap Tracker!</h1>
   <p class="lead"> Detecting hotspots, safety and more to arrive!<br></p>
-  <iframe width="840" height="420"
-    src="https://www.youtube.com/embed/tgbNymZ7vqY">
-  </iframe>
+
+  <h5 style="padding-top:5rem;">Sample Input</h5>
+  <iframe src="https://drive.google.com/file/d/1LoXtqOdC-0LC8DOJcWalNOR-yp-aQkGY/preview" style="object-fit:scale-down;"></iframe>
+  <h5 style="padding-top:5rem;">Sample Output</h5>
+  <iframe src="https://drive.google.com/file/d/1KYP2CAGE5klPzKv4heUfTXE11199CCRJ/preview" style="object-fit:scale-down;"></iframe>
+
+  <div style="padding-top:5rem;">
+    <h4> Script now available! </h4>
+    <a type="button" class="btn btn-secondary" href="https://drive.google.com/open?id=1kSEtI5MEojunHfjcPtobVMeabq6rS3MB">Script Download</a>
+    <a type="button" class="btn btn-secondary" href="https://github.com/tuankhoin/cv-detector/blob/master/motion-heatmap/README.md">Usage Instruction</a>
+  </div>
+
 </div>
+
+<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
 {% endblock content %}
