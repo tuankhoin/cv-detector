@@ -1,8 +1,3 @@
-"""
-Created on Tue Apr 7 00:10:36 2020
-
-@author: Gurpreet Singh
-"""
 import numpy as np
 import time
 import cv2
