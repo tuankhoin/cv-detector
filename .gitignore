@@ -169,3 +169,4 @@ dmypy.json
 # Pyre type checker
 
 # End of https://www.gitignore.io/api/flask,python
+yolov3/yolov3.weights
